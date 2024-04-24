@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Lista de assistidos</h1>
+    {% for assistido in assistidos %}
+        <ul>
+            <li>{{ assistido.nome }}</li>
+        </ul>
+    {% endfor %}
 </body>
 </html>

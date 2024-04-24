@@ -1,10 +1,16 @@
-from django.shortcuts import render
 from django.http.request import HttpRequest
+from django.shortcuts import render
+
+from . import models
 
 
-def index(request: HttpRequest):
+def listar_assistidos(request: HttpRequest):
+    assistidos = models.Assistido.objects.all()
+
     return render(
         request=request,
         template_name="assistido/lista_assistidos.html",
-        context={}
+        context={
+            "assistidos": assistidos,
+        }
     )
