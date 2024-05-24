@@ -8,3 +8,6 @@ class PessoaFisica(Pessoa):
     class Meta:
         verbose_name = 'Pessoa Física'
         verbose_name_plural = 'Pessoas Físicas'
+
+    def __str__(self):
+        return self.nome

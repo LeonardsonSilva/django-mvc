@@ -15,4 +15,4 @@ class PessoaTelefone(models.Model):
         verbose_name_plural = 'Pessoas/Telefones'
 
     def __str__(self):
-        return f'{str(self.pessoa)}/{str(self.telefone)}'
+        return f'{str(self.pessoa)} / {str(self.telefone)}'

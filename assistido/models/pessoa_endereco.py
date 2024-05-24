@@ -15,4 +15,4 @@ class PessoaEndereco(models.Model):
         verbose_name_plural = 'Pessoas/Endereços'
 
     def __str__(self):
-        return f'{str(self.pessoa)}/{str(self.endereco)}'
+        return f'{str(self.pessoa)} / {str(self.endereco)}'

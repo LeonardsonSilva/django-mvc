@@ -8,3 +8,6 @@ class Pessoa(models.Model):
     email = models.EmailField(max_length=120)
     telefones = models.ManyToManyField(to=Telefone, through='PessoaTelefone', through_fields=('pessoa', 'telefone'))
     enderecos = models.ManyToManyField(to=Endereco, through='PessoaEndereco', through_fields=('pessoa', 'endereco'))
+
+    def __str__(self):
+        return self.nome
