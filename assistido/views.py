@@ -7,7 +7,7 @@ from . import models
 
 
 def listar_assistidos(request: HttpRequest):
-    assistidos = models.Assistido.objects.none()
+    assistidos = models.Pessoa.objects.none()
     form_filtro = forms.FiltroAssistido
 
     if request.method == 'GET':
@@ -15,12 +15,15 @@ def listar_assistidos(request: HttpRequest):
 
         form_filtro = forms.FiltroAssistido(request.GET or None)
 
-        assistidos = models.Assistido.objects.filter(
+        assistidos = models.Pessoa.objects.filter(
             nome__icontains=nome
-        ).select_related(
-            'endereco',
         )
 
-        a = list(assistidos)
-
-    return JsonResponse(list(assistidos), safe=False)
+    return render(
+        request=request,
+        template_name="assistido/lista_assistidos.html",
+        context={
+            "assistidos": assistidos,
+            "form_filtro": form_filtro,
+        }
+    )
