@@ -1,0 +1,6 @@
+from .pessoa import Pessoa
+from .pessoaFisica import PessoaFisica
+from .pessoa_endereco import PessoaEndereco
+from .pessoa_telefone import PessoaTelefone
+
+__all__ = ('Pessoa', 'PessoaFisica', 'PessoaEndereco', 'PessoaTelefone',)
