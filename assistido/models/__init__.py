@@ -1,5 +1,5 @@
 from .pessoa import Pessoa
-from .pessoaFisica import PessoaFisica
+from .pessoa_fisica import PessoaFisica
 from .pessoa_endereco import PessoaEndereco
 from .pessoa_telefone import PessoaTelefone
 
